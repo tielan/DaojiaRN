@@ -215,7 +215,6 @@ starWrap: {
   alignSelf: 'center'
 },
 star: {
-  position: 'relative',
   height: 10,
   width: 50,
 },
