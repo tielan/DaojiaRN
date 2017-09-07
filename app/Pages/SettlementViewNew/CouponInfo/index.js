@@ -9,9 +9,9 @@ import {
 } from 'react-native';
 
 export default class MyComponent extends Component {
-  let props = this.props
 
   render() {
+    let props = this.props
     return (
       <View style={styles.container}>
         <Text>I'm the MyComponent component</Text>
