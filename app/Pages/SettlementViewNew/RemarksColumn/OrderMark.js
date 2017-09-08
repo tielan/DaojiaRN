@@ -37,8 +37,7 @@ export default class OrderMark extends Component {
         <TouchableWithoutFeedback
           onPress={() => {
             this.setState({
-              modalVisible: true,
-              isEdit: true
+              modalVisible: true
             })
           }}>
           <View style={styles.container}>
