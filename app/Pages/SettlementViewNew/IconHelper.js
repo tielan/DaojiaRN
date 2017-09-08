@@ -3,7 +3,7 @@ import {
   View,
   Text,
   Image,
-  TouchableOpacity,
+  TouchableWithoutFeedback,
   StyleSheet
 } from 'react-native'
 import PropTypes from 'prop-types'
@@ -31,13 +31,11 @@ export default class IconHelper extends Component {
           setModalVisible={this.setModalVisible}
           {...this.props}
           ></AlertFreight>
-        <TouchableOpacity onPress={() => {
-          this.setState({
-            modalVisible: true
-          })
+        <TouchableWithoutFeedback onPress={() => {
+          this.setModalVisible(true)
         }}>
           <Image style={styles.iconHelp} source={Help}></Image>
-        </TouchableOpacity>
+        </TouchableWithoutFeedback>
       </View>
     )
   }
