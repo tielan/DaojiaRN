@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import AddressText from './AddressText'
 
+// 选择收货地址 或 新建收货地址
 export default class AddressSelect extends Component {
   render() {
     let {title, isNew} = this.props
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderColor: '#fff',
     borderWidth: 0.5,
+    borderRadius: 20,
     height: 30,
     width: 180,
     // alignItems: 'center',
@@ -33,6 +35,7 @@ const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     lineHeight: 16,
+    backgroundColor: 'transparent'
     // lineHeight: 28
   },
 });
