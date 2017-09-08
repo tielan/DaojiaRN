@@ -21,11 +21,11 @@ export default class SettleContent extends Component {
       <View style={styles.settleContentWrapper}>
         <StoreTitle></StoreTitle>
         <ProductInfo
-          productInfo={productInfo}
+          productInfo={productInfo.data}
           totalWeight={totalWeight}></ProductInfo>
         <MoneyInfo
-          moneyInfo={moneyInfo}
-          disMoneyInfo={disMoneyInfo}>
+          moneyInfo={moneyInfo.data}
+          disMoneyInfo={disMoneyInfo.data}>
         </MoneyInfo>
         <CouponInfo></CouponInfo>
       </View>

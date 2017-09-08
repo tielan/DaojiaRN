@@ -19,7 +19,7 @@ export default class IconHelper extends Component {
     modalVisible: false,
   }
 
-  setModalVisible(visible) {
+  setModalVisible = (visible) => {
     this.setState({modalVisible: visible});
   }
 
@@ -28,10 +28,7 @@ export default class IconHelper extends Component {
       <View>
         <AlertFreight
           modalVisible={this.state.modalVisible}
-          setModalVisible={(visible) => {
-            console.log('setModalVisible', visible);
-            this.setModalVisible(visible)
-          }}
+          setModalVisible={this.setModalVisible}
           {...this.props}
           ></AlertFreight>
         <TouchableOpacity onPress={() => {

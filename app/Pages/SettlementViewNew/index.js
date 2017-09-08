@@ -6,10 +6,11 @@ import {
   View,
   ScrollView
 } from 'react-native'
-import SettleSubmit from './SettleSubmit'
+import SubmitInfo from './SubmitInfo'
 import ReceiptAddress from './ReceiptAddress'
 import DeliverTime from './DeliverTime'
 import SettleContent from './SettleContent'
+import RemarksColumn from './RemarksColumn'
 import settleData from './_TestData'
 
 export default class SettlementView extends Component {
@@ -22,16 +23,16 @@ export default class SettlementView extends Component {
     let settleData = this.state.settleData;
     let modulesMap = {}
     for (module of settleData.newModules) {
-      modulesMap[module.moduleKey] = module.data
+      modulesMap[module.moduleKey] = module
     }
     return (
       <View style={styles.container}>
         <ReceiptAddress
-          receiptAddress={modulesMap.receiptAddress}
+          receiptAddress={modulesMap.receiptAddress.data}
           ></ReceiptAddress>
         <ScrollView style={styles.scrollView}>
           <DeliverTime
-            deliverTime={modulesMap.deliverTime}
+            deliverTime={modulesMap.deliverTime.data}
             distributionType={settleData.distributionType} >
           </DeliverTime>
           <SettleContent
@@ -39,8 +40,11 @@ export default class SettlementView extends Component {
             totalWeight={settleData.totalWeight}
             >
           </SettleContent>
+          <RemarksColumn
+            orderMark={modulesMap.orderMark}
+            outOfStockConfig={modulesMap.outOfStockConfig.data}></RemarksColumn>
         </ScrollView>
-        <SettleSubmit></SettleSubmit>
+        <SubmitInfo totalMoney={settleData.totalMoney}></SubmitInfo>
       </View>
     )
   }
@@ -56,6 +60,7 @@ const styles = StyleSheet.create({
   scrollView: {
     top: -30,
     marginHorizontal: 10,
+    marginBottom: 20
     // borderTopWidth: 10,
     // borderColor: 'rgba(73, 179, 77, 0.8)'
   }
