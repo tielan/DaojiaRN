@@ -32,11 +32,17 @@ export default class AlertMark extends Component {
                 this.props.setModalVisible(false)
               }}
               >
-              <Text style={styles.cancelText}>取消</Text>
+              <View>
+                <Text style={styles.cancelText}>取消</Text>
+              </View>
             </TouchableWithoutFeedback>
             <Text style={styles.title}>写备注信息</Text>
 
-            <Text style={styles.confirmText}>确定</Text>
+            <TouchableWithoutFeedback>
+              <View>
+                <Text style={styles.confirmText}>确定</Text>
+              </View>
+            </TouchableWithoutFeedback>
           </View>
 
           {/* 备注输入框 */}
@@ -53,12 +59,9 @@ export default class AlertMark extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   mask: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row'
