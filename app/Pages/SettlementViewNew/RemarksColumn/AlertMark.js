@@ -12,6 +12,13 @@ import {
 
 export default class AlertMark extends Component {
 
+  constructor (props) {
+    super(props)
+    this.state = {
+      text: props.orderMark
+    }
+  }
+
   render() {
     return (
       <Modal
@@ -19,6 +26,9 @@ export default class AlertMark extends Component {
         transparent={true}
         visible={this.props.modalVisible}
         onRequestClose={() => {
+          this.setState({
+            text: this.props.orderMark
+          })
           this.props.setModalVisible(false)
         }}
         >
@@ -29,6 +39,9 @@ export default class AlertMark extends Component {
             {/* 取消操作 */}
             <TouchableWithoutFeedback
               onPress={() => {
+                this.setState({
+                  text: this.props.orderMark
+                })
                 this.props.setModalVisible(false)
               }}
               >
@@ -38,7 +51,10 @@ export default class AlertMark extends Component {
             </TouchableWithoutFeedback>
             <Text style={styles.title}>写备注信息</Text>
 
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={() => {
+                this.props.setModalVisible(false, this.state.text)
+            }}>
               <View>
                 <Text style={styles.confirmText}>确定</Text>
               </View>
@@ -50,6 +66,13 @@ export default class AlertMark extends Component {
             autoFocus={true}
             multiline={true}
             style={styles.markInput}
+            placeholder={'订单备注（30字以内）'}
+            value={this.state.text}
+            onChangeText={
+              (text) => {
+                this.setState({text})
+              }
+            }
           />
         </View>
        </View>
@@ -102,6 +125,7 @@ const styles = StyleSheet.create({
     height: 160,
     backgroundColor: '#f4f4f4',
     borderColor: '#e8e8e8',
-    borderWidth: 0.5
+    borderWidth: 0.5,
+    fontSize: 15
   }
 });

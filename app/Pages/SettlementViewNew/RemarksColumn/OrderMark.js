@@ -14,14 +14,14 @@ import AlertMark from './AlertMark'
 
 export default class OrderMark extends Component {
   state = {
-    isEdit: false,
+    orderMark: '',
     modalVisible: false
   }
 
-  setModalVisible = (visible, isEdit = false) => {
+  setModalVisible = (visible, orderMark = '') => {
     this.setState({
       modalVisible: visible,
-      isEdit: isEdit
+      orderMark: orderMark || this.state.orderMark
     });
   }
 
@@ -32,7 +32,8 @@ export default class OrderMark extends Component {
         <AlertMark
           modalVisible={this.state.modalVisible}
           setModalVisible={this.setModalVisible}
-          {...this.props}
+          orderMark={this.state.orderMark}
+          // {...this.props}
         ></AlertMark>
         <TouchableWithoutFeedback
           onPress={() => {
@@ -41,9 +42,10 @@ export default class OrderMark extends Component {
             })
           }}>
           <View style={styles.container}>
-            <RemarkText style={{maxWidth: 80}}>{ defaultText }</RemarkText>
+            <RemarkText style={{maxWidth: 80}}>{
+              this.state.orderMark || defaultText }</RemarkText>
             {
-              this.state.isEdit ?
+              this.state.orderMark ?
               <Image source={IconMark} style={styles.iconMark}></Image>
               : null
             }
