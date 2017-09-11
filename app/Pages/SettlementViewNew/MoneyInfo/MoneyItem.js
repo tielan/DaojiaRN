@@ -12,7 +12,7 @@ export default class MoneyItem extends Component {
   render() {
     let item = this.props.item
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, this.props.style]}>
         <View style={styles.moneyItemWrapper}>
 
           <View style={styles.itemText}>

@@ -5,24 +5,32 @@ import {
   View,
   Text,
   StyleSheet,
-  FlatList
 } from 'react-native';
+import UseCouponTip from './UseCouponTip'
+import CouponList from './CouponList'
 
-export default class MyComponent extends Component {
+export default class CouponInfo extends Component {
+
+  supportCoupon (couponInfo) {
+    return couponInfo.promoteType || (couponInfo.codeListSuccessFlag && couponInfo.voucherListVO.length > 0)
+  }
 
   render() {
-    let props = this.props
+    let {couponInfo} = this.props
+
+    // 不支持优惠券不渲染任何内容
+    if (!this.supportCoupon(couponInfo)) return null
+
     return (
-      <View style={styles.container}>
-        <Text>I'm the MyComponent component</Text>
-      </View>
-    );
+     !couponInfo.codeListSuccessFlag
+      ? <UseCouponTip couponVO={couponInfo.vouVO}></UseCouponTip>
+      : <CouponList voucherList={couponInfo.voucherListVO}></CouponList>
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
-    backgroundColor: '#f00'
-  },
+    marginBottom: 14
+  }
 });
