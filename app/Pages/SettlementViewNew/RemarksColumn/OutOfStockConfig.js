@@ -34,7 +34,7 @@ export default class MyComponent extends Component {
             modalVisible: true
           })
         }}>
-        <View style={{flexDirection: 'row'}}>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <PickerConfig
             modalVisible={this.state.modalVisible}
             setModalVisible={this.setModalVisible}
