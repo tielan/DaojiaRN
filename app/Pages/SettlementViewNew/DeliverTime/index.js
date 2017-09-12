@@ -37,7 +37,7 @@ export default class DeliverTime extends Component {
             })
           }}>
           <View style={styles.deliverTimeContent}>
-            <Text style={styles.deliverTimeText}>立即送达[预计16:38]</Text>
+            <Text style={styles.deliverTimeText}>{deliverTime.nonPushTimeText}</Text>
             <IconArrow style={styles.deliverTimeArrow}></IconArrow>
           </View>
         </TouchableWithoutFeedback>

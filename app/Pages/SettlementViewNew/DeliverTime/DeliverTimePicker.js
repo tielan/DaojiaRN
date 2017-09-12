@@ -15,50 +15,83 @@ export default class DeliverTimePicker extends Component {
     super(props)
     let { timeList } = this.props
     this.state = {
-      selectedDate: timeList[0].promiseDate,
-      selectedTimeList: timeList[0],
-      selectedTime: timeList[0][0]
+      selectedDate: 0,
+      selectedTimeList: timeList[0].promiseTimeRespItems,
+      selectedTime: 0
     }
   }
 
-  _dateChangeHandle = (itemValue, itemIndex) => {
-    let { timeList } = this.props
-    console.log(timeList[itemIndex].promiseDate);
+  _confirmHandle = () => {
+    let {selectedDate, selectedTime, selectedTimeList} = this.state
+    let {timeList} = this.props
+    let timeData = selectedTimeList[selectedTime]
+    let promiseDate = timeList[selectedDate].promiseDate
+    let promiseStartTime = timeData.promiseStartTime
+    let promiseEndTime = timeData.promiseEndTime
+
+    let data = {
+      promiseDate: promiseDate,
+      promiseStartTime: promiseStartTime,
+      promiseEndTime: promiseEndTime,
+      onTime: timeData.dingshida ? 1 : 0,
+      sendTime: promiseDate + ' ' + promiseStartTime + ':00',
+      deliveryTime: promiseDate + ' ' + promiseEndTime + ':00',
+      expectedDeliveryTime: timeData.expectedDeliveryTime,
+      deliveryTip: timeData.deliveryTip
+    }
+
+    console.log(data);
+    this.props.setModalVisible(false, data)
+  }
+
+  _dateTimeChangeHandle = (itemValue) => {
     this.setState({
-      selectedDate: itemValue,
-      selectedTimeList: timeList[itemIndex].promiseTimeRespItems
+      selectedTime: itemValue
     })
   }
 
   _renderDateTimePicker = () => {
-    console.log(this.state.selectedTimeList);
+    // console.log(this.state.selectedTimeList);
     let { selectedTimeList } = this.state
     let pickerItem = selectedTimeList.map((item, index) => {
       return <Picker.Item
-        key={item.promiseDate}
+        key={index}
         label={item.promiseTimeText}
-        value={item.promiseDate} />
+        value={index} />
     })
 
     return <Picker
-      style={styles.picker}
+      style={[styles.picker, {flex: 0.6}]}
+      itemStyle={styles.pickerItem}
       selectedValue={this.state.selectedTime}
-      onValueChange={this._dateChangeHandle}>
+      onValueChange={this._dateTimeChangeHandle}>
       {pickerItem}
     </Picker>
   }
 
+  // 日期 Picker change 处理
+  _dateChangeHandle = (itemValue) => {
+    let { timeList } = this.props
+    // console.log(timeList[itemValue].promiseDate);
+    this.setState({
+      selectedDate: itemValue,
+      selectedTimeList: timeList[itemValue].promiseTimeRespItems
+    })
+  }
+
+  // 日期 Picker
   _renderDatePicker =  () => {
     let { timeList } = this.props
     let pickerItem = timeList.map((item, index) => {
       return <Picker.Item
-        key={item.promiseDate}
+        key={index}
         label={item.promiseDateText}
-        value={item.promiseDate} />
+        value={index} />
     })
 
     return <Picker
-      style={styles.picker}
+      style={[styles.picker, {flex: 0.4}]}
+      itemStyle={styles.pickerItem}
       selectedValue={this.state.selectedDate}
       onValueChange={this._dateChangeHandle}>
       {pickerItem}
@@ -75,7 +108,15 @@ export default class DeliverTimePicker extends Component {
         onRequestClose={() => {
           this.props.setModalVisible(false)
         }}>
-        <View style={styles.mask}>
+
+        <View style={styles.pickerWrapper}>
+          <TouchableWithoutFeedback
+            onPress={() => {
+              this.props.setModalVisible(false)
+            }}>
+            <View style={styles.mask}>
+            </View>
+          </TouchableWithoutFeedback>
           <View style={styles.pickerHeader}>
             {/* 取消操作 */}
             <TouchableWithoutFeedback
@@ -89,9 +130,7 @@ export default class DeliverTimePicker extends Component {
             </TouchableWithoutFeedback>
 
             <TouchableWithoutFeedback
-              onPress={() => {
-                this.props.setModalVisible(false, this.state.selectedValue)
-              }}
+              onPress={this._confirmHandle}
               >
               <View>
                 <Text style={styles.confirmText}>确定</Text>
@@ -111,8 +150,16 @@ export default class DeliverTimePicker extends Component {
 
 const styles = StyleSheet.create({
   mask: {
-    flex: 1,
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    // justifyContent: 'flex-end',
+  },
+  pickerWrapper: {
+    flex: 1,
     justifyContent: 'flex-end',
   },
   pickerContainer: {
@@ -122,6 +169,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     height: 170,
     flex: 1
+  },
+  pickerItem: {
+    fontSize: 18,
+    lineHeight: 30
   },
   pickerHeader: {
     backgroundColor: '#f4f4f4',

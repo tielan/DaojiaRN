@@ -15,7 +15,7 @@ export default class IconArrow extends Component {
   }
 
   getDegVal (direction) {
-    console.log(direction);
+    // console.log(direction);
     let degVal = 0
     switch (direction) {
       case 'bottom':

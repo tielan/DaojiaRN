@@ -56,6 +56,7 @@ export default class PickerConfig extends Component {
           </View>
           <Picker
             style={styles.picker}
+            itemStyle={styles.pickerItem}
             selectedValue={this.state.selectedValue}
             onValueChange={
               (itemValue, itemIndex) => this.setState({
@@ -79,6 +80,11 @@ const styles = StyleSheet.create({
   picker: {
     backgroundColor: '#fff',
     height: 170
+  },
+  pickerItem: {
+    fontSize: 18,
+    color: '#333',
+    lineHeight: 30
   },
   pickerHeader: {
     backgroundColor: '#f4f4f4',
