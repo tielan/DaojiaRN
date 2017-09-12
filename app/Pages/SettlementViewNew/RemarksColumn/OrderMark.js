@@ -29,12 +29,16 @@ export default class OrderMark extends Component {
     let { defaultText } = this.props
     return (
       <View>
-        <AlertMark
-          modalVisible={this.state.modalVisible}
-          setModalVisible={this.setModalVisible}
-          orderMark={this.state.orderMark}
-          // {...this.props}
-        ></AlertMark>
+        {
+          this.state.modalVisible ?
+          <AlertMark
+            modalVisible={this.state.modalVisible}
+            setModalVisible={this.setModalVisible}
+            orderMark={this.state.orderMark}
+            {...this.props}
+          ></AlertMark>: null
+        }
+
         <TouchableWithoutFeedback
           onPress={() => {
             this.setState({
@@ -42,8 +46,9 @@ export default class OrderMark extends Component {
             })
           }}>
           <View style={styles.container}>
-            <RemarkText style={{maxWidth: 80}}>{
-              this.state.orderMark || defaultText }</RemarkText>
+            <RemarkText style={{maxWidth: 80}}>
+              { this.state.orderMark || defaultText }
+            </RemarkText>
             {
               this.state.orderMark ?
               <Image source={IconMark} style={styles.iconMark}></Image>

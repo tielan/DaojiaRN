@@ -5,7 +5,8 @@ import {
   View,
   Text,
   StyleSheet,
-  FlatList
+  FlatList,
+  Dimensions
 } from 'react-native';
 import CouponItem from './CouponItem'
 
@@ -29,25 +30,31 @@ export default class CouponList extends Component {
         data={voucherList}
         keyExtractor={this._keyExtractor}
         renderItem={this._renderItem}
-        ListHeaderComponent={<View style={styles.header}></View>}
+        // ListHeaderComponent={<View style={styles.header}></View>}
         >
       </FlatList>
     );
   }
 }
 
+let width = Dimensions.get('window').width - 20
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 8,
-    paddingLeft: 10,
+    paddingLeft: 5,
     paddingBottom: 22,
-    width: 400,
-    transform: [
-      {
-        translateX: -10
-      }
-    ]
+    // width: width,
+    // transform: [
+    //   {
+    //     translateX: -5
+    //   }
+    // ],
+    // backgroundColor: '#fff',
+    // shadowOpacity: 0.2,
+    // shadowRadius: 1,
+    // shadowOffset: {width: 0, height: 0},
   },
   // header: {
   //   position: 'absolute',

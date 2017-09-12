@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   remarkText: {
     color: '#666',
     fontSize: 13,
-    maxWidth: 160
+    maxWidth: 160,
+    fontFamily: 'Helvetica'
   },
 });

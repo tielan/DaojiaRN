@@ -44,6 +44,6 @@ export default class MyComponent extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20,
-  },
+    paddingTop: 20
+  }
 });

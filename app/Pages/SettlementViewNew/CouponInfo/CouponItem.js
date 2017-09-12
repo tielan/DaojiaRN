@@ -16,9 +16,10 @@ export default class CouponItem extends Component {
           {item.amount}
           <Text style={styles.amountUnit}>{item.amountUnit}</Text>
         </Text>
-        <View>
-          <Text>{item.couponName}</Text>
-          <Text>{item.couponTypeDesc}</Text>
+        <View style={{flex: 1}}>
+          <Text style={[styles.couponDesc, {color: '#333'}]}>{item.couponTitle}</Text>
+          <Text style={styles.couponDesc}>{item.limitRule}</Text>
+          <Text style={styles.couponDesc}>{item.avilableDate}</Text>
         </View>
       </View>
     );
@@ -27,8 +28,8 @@ export default class CouponItem extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    width: 198,
+    // flex: 1,
+    // minWidth: 198,
     height: 70,
     padding: 20,
     marginRight: 15,
@@ -37,9 +38,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 0.5,
     borderColor: '#e8e8e8',
+    backgroundColor: '#fff',
     // 阴影
     shadowOpacity: 0.2,
-    shadowRadius: 5,
+    shadowRadius: 3,
     shadowOffset: {width: 0, height: 0},
   },
   amount: {
@@ -49,5 +51,10 @@ const styles = StyleSheet.create({
   },
   amountUnit: {
     fontSize: 10
+  },
+  couponDesc: {
+    fontSize: 12,
+    color: '#999',
+    lineHeight: 17
   }
 });
