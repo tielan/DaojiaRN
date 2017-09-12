@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  StyleSheet,
 } from 'react-native';
 import UseCouponTip from './UseCouponTip'
 import CouponList from './CouponList'
@@ -28,9 +27,3 @@ export default class CouponInfo extends Component {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginBottom: 14
-  }
-});
