@@ -2,21 +2,55 @@ import React, { Component } from 'react'
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  TouchableWithoutFeedback
 } from 'react-native'
 import DeliverTag from './DeliverTag'
 import IconArrow from '../IconArrow'
+import DeliverTimePicker from './DeliverTimePicker'
+
 export default class DeliverTime extends Component {
+
+  state = {
+    modalVisible: false,
+    selectedTime: 0
+  }
+
+  setModalVisible = (modalVisible, selectedTime) => {
+    this.setState({
+      modalVisible: modalVisible,
+      selectedTime: selectedTime
+    })
+  }
+
+
   render () {
-    let props = this.props
+    let {deliverTime} = this.props
 
     return (
       <View style={styles.deliverTimeContainer}>
         <DeliverTag></DeliverTag>
-        <View style={styles.deliverTimeContent}>
-          <Text style={styles.deliverTimeText}>立即送达[预计16:38]</Text>
-          <IconArrow style={styles.deliverTimeArrow}></IconArrow>
-        </View>
+        <TouchableWithoutFeedback
+          onPress={() => {
+            this.setState({
+              modalVisible: true
+            })
+          }}>
+          <View style={styles.deliverTimeContent}>
+            <Text style={styles.deliverTimeText}>立即送达[预计16:38]</Text>
+            <IconArrow style={styles.deliverTimeArrow}></IconArrow>
+          </View>
+        </TouchableWithoutFeedback>
+        {
+          deliverTime.promiseDateRespItems && deliverTime.promiseDateRespItems.length > 0
+          ? <DeliverTimePicker
+              modalVisible={this.state.modalVisible}
+              setModalVisible={this.setModalVisible}
+              timeList={deliverTime.promiseDateRespItems}
+              ></DeliverTimePicker>
+          : null
+        }
+
       </View>
     )
   }

@@ -10,17 +10,62 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 
-export default class PickerConfig extends Component {
-  state = {
-    selectedValue: 0,
+export default class DeliverTimePicker extends Component {
+  constructor (props) {
+    super(props)
+    let { timeList } = this.props
+    this.state = {
+      selectedDate: timeList[0].promiseDate,
+      selectedTimeList: timeList[0],
+      selectedTime: timeList[0][0]
+    }
+  }
+
+  _dateChangeHandle = (itemValue, itemIndex) => {
+    let { timeList } = this.props
+    console.log(timeList[itemIndex].promiseDate);
+    this.setState({
+      selectedDate: itemValue,
+      selectedTimeList: timeList[itemIndex].promiseTimeRespItems
+    })
+  }
+
+  _renderDateTimePicker = () => {
+    console.log(this.state.selectedTimeList);
+    let { selectedTimeList } = this.state
+    let pickerItem = selectedTimeList.map((item, index) => {
+      return <Picker.Item
+        key={item.promiseDate}
+        label={item.promiseTimeText}
+        value={item.promiseDate} />
+    })
+
+    return <Picker
+      style={styles.picker}
+      selectedValue={this.state.selectedTime}
+      onValueChange={this._dateChangeHandle}>
+      {pickerItem}
+    </Picker>
+  }
+
+  _renderDatePicker =  () => {
+    let { timeList } = this.props
+    let pickerItem = timeList.map((item, index) => {
+      return <Picker.Item
+        key={item.promiseDate}
+        label={item.promiseDateText}
+        value={item.promiseDate} />
+    })
+
+    return <Picker
+      style={styles.picker}
+      selectedValue={this.state.selectedDate}
+      onValueChange={this._dateChangeHandle}>
+      {pickerItem}
+    </Picker>
   }
 
   render() {
-    let { outOfStockConfig } = this.props
-    let pickerItem = outOfStockConfig.map((item, index) => {
-      return <Picker.Item key={'config' + index} label={item} value={index} style={styles.pickerItem}/>
-    })
-
     return (
       <Modal
         animationType="slide"
@@ -42,7 +87,6 @@ export default class PickerConfig extends Component {
                 <Text style={styles.cancelText}>取消</Text>
               </View>
             </TouchableWithoutFeedback>
-            <Text style={styles.title}>如遇缺货</Text>
 
             <TouchableWithoutFeedback
               onPress={() => {
@@ -54,16 +98,11 @@ export default class PickerConfig extends Component {
               </View>
             </TouchableWithoutFeedback>
           </View>
-          <Picker
-            style={styles.picker}
-            selectedValue={this.state.selectedValue}
-            onValueChange={
-              (itemValue, itemIndex) => this.setState({
-                selectedValue: itemValue
-              })
-            }>
-            {pickerItem}
-          </Picker>
+
+          <View style={styles.pickerContainer}>
+            {this._renderDatePicker()}
+            {this._renderDateTimePicker()}
+          </View>
         </View>
       </Modal>
     );
@@ -76,9 +115,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
     justifyContent: 'flex-end',
   },
+  pickerContainer: {
+    flexDirection: 'row'
+  },
   picker: {
     backgroundColor: '#fff',
-    height: 170
+    height: 170,
+    flex: 1
   },
   pickerHeader: {
     backgroundColor: '#f4f4f4',
