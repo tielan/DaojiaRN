@@ -30,17 +30,18 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     // minWidth: 198,
-    height: 70,
-    padding: 20,
+    // height: 70,
+    paddingHorizontal: 20,
+    paddingVertical: 15,
     marginRight: 15,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 0.5,
-    borderColor: '#e8e8e8',
-    backgroundColor: '#fff',
+    borderColor: '#f4f4f4',
+    // backgroundColor: '#fff',
     // 阴影
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 3,
     shadowOffset: {width: 0, height: 0},
   },
@@ -50,13 +51,11 @@ const styles = StyleSheet.create({
     paddingRight: 10
   },
   amountUnit: {
-    fontSize: 10,
-    fontFamily: 'Helvetica'
+    fontSize: 10
   },
   couponDesc: {
     fontSize: 12,
     color: '#999',
     lineHeight: 17,
-    fontFamily: 'Helvetica'
   }
 });
