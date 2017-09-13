@@ -56,13 +56,4 @@ const styles = StyleSheet.create({
     // shadowRadius: 1,
     // shadowOffset: {width: 0, height: 0},
   },
-  // header: {
-  //   position: 'absolute',
-  //   height: 95,
-  //   width: 10,
-  //   left: -10,
-  //   top: 0,
-  //   zIndex: 999,
-  //   backgroundColor: '#ff0'
-  // }
 });

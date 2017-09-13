@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
   useCouponTip: {
     fontSize: 13,
     color: '#666',
-    paddingTop: 10
+    paddingTop: 10,
+    fontFamily: 'Helvetica'
   }
 });
