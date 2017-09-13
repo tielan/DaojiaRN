@@ -16,6 +16,7 @@ export default class RMB extends PureComponent {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 10
+    fontSize: 10,
+    fontFamily: 'Helvetica'
   }
 })

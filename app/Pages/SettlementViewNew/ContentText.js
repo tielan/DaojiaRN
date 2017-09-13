@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
   contentText: {
     color: '#333',
     fontSize: 14,
-    lineHeight: 18
+    lineHeight: 18,
+    fontFamily: 'Helvetica'
   }
 })

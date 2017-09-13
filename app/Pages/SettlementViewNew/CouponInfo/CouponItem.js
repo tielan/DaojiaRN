@@ -50,11 +50,13 @@ const styles = StyleSheet.create({
     paddingRight: 10
   },
   amountUnit: {
-    fontSize: 10
+    fontSize: 10,
+    fontFamily: 'Helvetica'
   },
   couponDesc: {
     fontSize: 12,
     color: '#999',
-    lineHeight: 17
+    lineHeight: 17,
+    fontFamily: 'Helvetica'
   }
 });

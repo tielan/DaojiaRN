@@ -56,22 +56,21 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   flagWrapper: {
-    height: 14,
     borderRadius: 2,
-    marginRight: 4
+    marginRight: 4,
+    // height: 14,
+    justifyContent: 'center'
   },
   flagText: {
+    backgroundColor: 'transparent',
     fontSize: 10,
-    lineHeight: 10,
     color: '#fff',
-    padding: 2,
-    // lineHeight: 14,
-    alignSelf: 'center'
+    paddingHorizontal: 2,
   },
   freightDesc: {
     fontSize: 11,
     color: '#999',
     paddingTop: 5,
-    lineHeight: 11
+    lineHeight: 11,
   }
 });

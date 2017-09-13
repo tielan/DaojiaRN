@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
   submitText: {
     fontSize: 20,
     color: '#fff',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontFamily: 'Helvetica'
   }
 });

@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
   },
   storeMoney: {
     color: '#999',
-    textDecorationLine: 'line-through'
+    textDecorationLine: 'line-through',
+    fontFamily: 'Helvetica'
   }
 })

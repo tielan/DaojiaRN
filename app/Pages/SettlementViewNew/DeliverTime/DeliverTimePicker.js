@@ -108,7 +108,6 @@ export default class DeliverTimePicker extends Component {
         onRequestClose={() => {
           this.props.setModalVisible(false)
         }}>
-
         <View style={styles.pickerWrapper}>
           <TouchableWithoutFeedback
             onPress={() => {

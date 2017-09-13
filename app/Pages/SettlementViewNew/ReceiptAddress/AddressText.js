@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
   addressText: {
     color: '#fff',
     fontSize: 16,
-    lineHeight: 20
+    lineHeight: 20,
+    fontFamily: 'Helvetica'
   }
 })
