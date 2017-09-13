@@ -9,7 +9,9 @@ import {
   Picker,
   TouchableWithoutFeedback
 } from 'react-native';
+import {inject} from 'mobx-react/native'
 
+@inject('settle')
 export default class DeliverTimePicker extends Component {
   constructor (props) {
     super(props)
@@ -39,7 +41,7 @@ export default class DeliverTimePicker extends Component {
       expectedDeliveryTime: timeData.expectedDeliveryTime,
       deliveryTip: timeData.deliveryTip
     }
-
+    this.props.settle.updateAccountData(data)
     console.log(data);
     this.props.setModalVisible(false, data)
   }

@@ -10,6 +10,7 @@ import PropTypes from 'prop-types'
 
 import Help from '../../Assets/help.png'
 import AlertFreight from './AlertFreight'
+
 export default class IconHelper extends Component {
   static propTypes = {
     direction: PropTypes.oneOf(['top', 'right', 'bottom', 'left'])

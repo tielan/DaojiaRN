@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native'
 import Button from 'react-native-button'
-import RMB from './SettleContent/RMB'
+import RMB from '../SettleContent/RMB'
 
 export default class SettleSubmit extends Component {
   render() {
