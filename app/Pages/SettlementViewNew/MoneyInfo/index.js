@@ -11,6 +11,13 @@ import Coupon from './Coupon'
 import CouponInfo from '../CouponInfo'
 
 export default class MyComponent extends Component {
+
+  /**
+   * [renderMoneyItem description]
+   * @method renderMoneyItem
+   * @param  {[type]}        moneyInfo [金额明细]
+   * @return {[type]}                  [MoneyItem]
+   */
   renderMoneyItem (moneyInfo) {
     return moneyInfo.map((val, index) => {
       return (
@@ -46,5 +53,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 20,
+    borderColor: '#e8e8e8',
+    borderBottomWidth: 1
   }
 });

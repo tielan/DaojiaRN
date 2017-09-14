@@ -10,11 +10,8 @@ import ProductInfo from './ProductInfo'
 import MoneyInfo from '../MoneyInfo'
 
 export default class SettleContent extends Component {
-  componentDidMount () {
-  }
-
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     let {productInfo, totalWeight, moneyInfo, disMoneyInfo, couponInfo} = this.props
     return (
       <View style={styles.settleContentWrapper}>
@@ -27,6 +24,7 @@ export default class SettleContent extends Component {
           disMoneyInfo={disMoneyInfo.data}
           couponInfo={couponInfo}>
         </MoneyInfo>
+
       </View>
     );
   }

@@ -21,8 +21,9 @@ export default class SettlementView extends Component {
   // }
 
   render() {
-    console.log(this.props.settle.accountData, this.props.settle.accountResult);
+    console.log('rerender');
     // console.log(this.state.settleData);
+    let accountData = this.props.settle.accountData
     let settleData = this.props.settle.accountResult
     let modulesMap = {}
     for (module of settleData.newModules) {

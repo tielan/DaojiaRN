@@ -1,5 +1,7 @@
 import { action, observable } from "mobx"
 import merge from "lodash/merge"
+
+
 import TestData from './_TestData'
 
 class SettlementStore {
@@ -18,6 +20,7 @@ class SettlementStore {
 
   @action
   updateAccountData = data => {
+    console.log('updateAccountData',data);
     this.accountData = merge(this.accountData, data)
   }
 }
