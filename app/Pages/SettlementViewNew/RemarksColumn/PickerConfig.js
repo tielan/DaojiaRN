@@ -59,7 +59,7 @@ export default class PickerConfig extends Component {
             itemStyle={styles.pickerItem}
             selectedValue={this.state.selectedValue}
             onValueChange={
-              (itemValue, itemIndex) => this.setState({
+              (itemValue) => this.setState({
                 selectedValue: itemValue
               })
             }>

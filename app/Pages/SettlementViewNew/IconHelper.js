@@ -44,9 +44,11 @@ export default class IconHelper extends Component {
 
 const styles = StyleSheet.create({
   iconHelp: {
+    marginTop: 3,
     width: 16,
     height: 16,
     tintColor: '#999',
-    marginHorizontal: 4
+    marginHorizontal: 5,
+    alignSelf: 'center'
   }
 })

@@ -1,5 +1,6 @@
 import { action, observable } from "mobx"
 import merge from "lodash/merge"
+import TestData from './_TestData'
 
 class SettlementStore {
   @observable accountData = {
@@ -13,6 +14,7 @@ class SettlementStore {
     source: 2,
     channelType: '0',
   }
+  @observable accountResult = TestData.result
 
   @action
   updateAccountData = data => {

@@ -19,7 +19,7 @@ export default class MoneyItem extends Component {
             {
               item.flagText ?
                 <View style={[styles.flagWrapper, {backgroundColor: item.flagColor}]}>
-                  <ContentText style={styles.flagText}>{item.flagText}</ContentText>
+                  <Text style={styles.flagText}>{item.flagText}</Text>
                 </View> : null
             }
 
@@ -53,19 +53,17 @@ const styles = StyleSheet.create({
   },
   itemText: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    // justifyContent: 'center'
   },
   flagWrapper: {
     borderRadius: 2,
+    padding:2,
     marginRight: 4,
-    // height: 14,
-    justifyContent: 'center'
   },
   flagText: {
-    backgroundColor: 'transparent',
     fontSize: 10,
     color: '#fff',
-    paddingHorizontal: 2,
   },
   freightDesc: {
     fontSize: 11,

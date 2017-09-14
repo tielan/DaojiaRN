@@ -20,6 +20,6 @@ const styles = StyleSheet.create({
     color: '#333',
     fontSize: 14,
     lineHeight: 18,
-    fontFamily: 'Helvetica'
+    // fontFamily: 'Helvetica'
   }
 })
