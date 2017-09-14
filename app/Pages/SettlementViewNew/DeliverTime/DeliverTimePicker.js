@@ -42,7 +42,7 @@ export default class DeliverTimePicker extends Component {
       deliveryTip: timeData.deliveryTip
     }
     this.props.settle.updateAccountData(data)
-    console.log(data);
+    // console.log(data);
     this.props.setModalVisible(false, data)
   }
 
