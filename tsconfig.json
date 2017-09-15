@@ -11,13 +11,12 @@
     "emitDecoratorMetadata": true,
     "noLib": false,
     "preserveConstEnums": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "outDir": "./dist/"
+    "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
-    "client",
-    "node_modules",
-    "typings/browser",
-    "typings/browser.d.ts"
-  ]
+    "node_modules"
+  ],
+  "atom": {
+    "rewriteTsconfig": false
+  }
 }
