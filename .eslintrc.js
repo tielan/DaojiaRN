@@ -27,7 +27,7 @@ module.exports = {
   },
   'global': [
     '__DEV__',
-    FormData,
+    // FormData,
     requestAnimationFrame,
     alert,
     setImmediate,
@@ -38,7 +38,7 @@ module.exports = {
     'array-bracket-spacing': [ERROR, 'never'],
     // 'no-unused-vars': [ERROR, {args: 'none'}],
     // 'no-undef' : ERROR,
-    'quotes': [ERROR, 'single', {avoidEscape: true, allowTemplateLiterals: true }],
+    'quotes': [ERROR, 'single', {avoidEscape: true, allowTemplateLiterals: true }]
     //
     // React & jsx
     // 'react/jsx-uses-react': ERROR,
