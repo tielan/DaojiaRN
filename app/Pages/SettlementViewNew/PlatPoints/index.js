@@ -24,6 +24,6 @@ export default class PlatPoints extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    paddingVertical: 15,
   },
 });
