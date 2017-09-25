@@ -16,7 +16,7 @@ export default class PlatPoints extends Component {
 
     return (
       <View style={styles.container}>
-        <Image source={uri: } style={styles.checkImage}></Image>
+        <Image source={uri: 'https://static-o2o.360buyimg.com/daojia/new/images/icon/icon_checkbox_none.png'} style={styles.checkImage}></Image>
         <Text>{platPoints.platPointsDesc}</Text>
       </View>
     );
