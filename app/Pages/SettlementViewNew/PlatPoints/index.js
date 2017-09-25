@@ -16,6 +16,7 @@ export default class PlatPoints extends Component {
 
     return (
       <View style={styles.container}>
+        <Image source={uri: } style={styles.checkImage}></Image>
         <Text>{platPoints.platPointsDesc}</Text>
       </View>
     );
