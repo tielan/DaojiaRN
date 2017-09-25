@@ -12,6 +12,7 @@ import IconArrow from '../IconArrow'
 import AddressUser from './AddressUser'
 import AddressDetail from './AddressDetail'
 import AddressSelect from './AddressSelect'
+import BookInfo from './BookInfo'
 
 export default class SettleAddress extends Component {
   render () {
@@ -27,6 +28,7 @@ export default class SettleAddress extends Component {
         }
 
         <IconArrow direction="left" style={styles.backArrow} ></IconArrow>
+        <BookInfo></BookInfo>
       </View>
     )
   }
