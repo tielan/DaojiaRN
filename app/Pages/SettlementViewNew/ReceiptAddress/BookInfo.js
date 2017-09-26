@@ -11,7 +11,8 @@ export default class BookInfo extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>I'm the BookInfo component</Text>
+        <TextInput style={styles.textinput} />
+        <TextInput style={styles.textinput}/>
       </View>
     );
   }
