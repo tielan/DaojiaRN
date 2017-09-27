@@ -5,14 +5,15 @@ import {
   View,
   Text,
   StyleSheet,
+  TouchableWithoutFeedback
 } from 'react-native';
 
 export default class PlatPoints extends Component {
-   
+
   state = {
     checked: false
   }
-  
+
   render() {
     let { platPoints } = this.props
     console.log(platPoints);
@@ -20,10 +21,13 @@ export default class PlatPoints extends Component {
 
     return (
       let checkURI = this.state.checked ? 'https://static-o2o.360buyimg.com/daojia/new/images/icon/icon_checked.png' : 'https://static-o2o.360buyimg.com/daojia/new/images/icon/icon_checkbox_none.png'
-      <View style={styles.container}>
-        <Image source={uri: checkURI} style={styles.checkImage}></Image>
-        <Text>{platPoints.platPointsDesc}</Text>
-      </View>
+
+      <TouchableWithoutFeedback>
+        <View style={styles.container}>
+          <Image source={uri: checkURI} style={styles.checkImage}></Image>
+          <Text>{platPoints.platPointsDesc}</Text>
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
