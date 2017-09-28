@@ -7,7 +7,7 @@ import {
   StyleSheet,
   TouchableWithoutFeedback
 } from 'react-native';
-
+import IconHelper from '../IconHelper'
 export default class PlatPoints extends Component {
 
   state = {
@@ -26,6 +26,7 @@ export default class PlatPoints extends Component {
         <View style={styles.container}>
           <Image source={uri: checkURI} style={styles.checkImage}></Image>
           <Text>{platPoints.platPointsDesc}</Text>
+          <IconHelper></IconHelper>
         </View>
       </TouchableWithoutFeedback>
     );
