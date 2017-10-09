@@ -25,11 +25,11 @@ export default class DeliverTime extends Component {
 
 
   render () {
-    let {deliverTime} = this.props
+    let {deliverTime, distributionType} = this.props
 
     return (
       <View style={styles.deliverTimeContainer}>
-        <DeliverTag></DeliverTag>
+        <DeliverTag distributionType={distributionType}></DeliverTag>
         <TouchableWithoutFeedback
           onPress={() => {
             this.setState({
