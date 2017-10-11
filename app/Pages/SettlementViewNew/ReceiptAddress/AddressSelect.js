@@ -7,6 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import AddressText from './AddressText'
+import IconArrow from '../IconArrow'
 
 // 选择收货地址 或 新建收货地址
 export default class AddressSelect extends Component {
@@ -14,7 +15,9 @@ export default class AddressSelect extends Component {
     let {title, isNew} = this.props
     return (
       <View style={styles.container}>
+        {isNew ? <Image source={}></Image>: null}
         <AddressText style={styles.title}>{title}</AddressText>
+        {!isNew ? <IconArrow></IconArrow>}
       </View>
     );
   }
