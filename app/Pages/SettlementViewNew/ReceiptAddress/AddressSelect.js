@@ -15,9 +15,9 @@ export default class AddressSelect extends Component {
     let {title, isNew} = this.props
     return (
       <View style={styles.container}>
-        {isNew ? <Image source={}></Image>: null}
+        {isNew ? <Text style={styles.addAddress}>＋</Text>: null}
         <AddressText style={styles.title}>{title}</AddressText>
-        {!isNew ? <IconArrow></IconArrow>}
+        {!isNew ? <IconArrow></IconArrow> : null}
       </View>
     );
   }
@@ -40,4 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
     // lineHeight: 28
   },
+  addAddress: {
+    fontSize: 24
+  }
 });
