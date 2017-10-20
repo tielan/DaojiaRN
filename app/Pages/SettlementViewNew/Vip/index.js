@@ -9,9 +9,11 @@ import {
 
 export default class Vip extends Component {
   render() {
+
     return (
       <View style={styles.container}>
         <Text>I'm the Vip component</Text>
+        <View><Text>立即开通</Text></View>
       </View>
     );
   }
@@ -20,5 +22,6 @@ export default class Vip extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row'
   },
 });
