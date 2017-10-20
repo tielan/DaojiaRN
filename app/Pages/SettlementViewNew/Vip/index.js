@@ -9,6 +9,7 @@ import {
 
 export default class Vip extends Component {
   render() {
+    let {purchaseTip} = this.props
 
     return (
       <View style={styles.container}>
