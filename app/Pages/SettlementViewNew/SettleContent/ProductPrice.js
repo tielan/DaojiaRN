@@ -13,21 +13,26 @@ export default class ProductPrice extends PureComponent {
 
     // 促销价格组
     let promotionMap = new Map()
-    item.promotionList.forEach((val) => {
-      if (val.promotionType === 1) {
-        promotionMap.set('basePrice', <ContentText><RMB></RMB>{val.price / 100} × {val.quantity}</ContentText>)
-      } else {
-        promotionMap.set('promotionPrice', <ContentText style={{color: '#ff5757'}}><RMB></RMB>{val.price / 100} × {val.quantity}</ContentText>)
-      }
-    })
+    let promotionList = item.promotionList
+    if (promotionList.length == 1) {
+        promotionMap.set('basePrice', <ContentText><RMB></RMB>{promotionList[0].price / 100} × {val.quantity}</ContentText>)
+    }else {
+      promotionList.forEach((val) => {
+        if (val.promotionType === 1) {
+          promotionMap.set('basePrice', <ContentText
+             style={{color: '#ff5757' }}><RMB></RMB>{val.price / 100} × {val.quantity}</ContentText>)
+        } else {
+          promotionMap.set('promotionPrice', <ContentText style={{color: '#ff5757'}}><RMB></RMB>{val.price / 100} × {val.quantity}</ContentText>)
+        }
+      })
+    }
 
     return (
       <View style={styles.productPrice} >
 
         {/* 左侧单价和促销价格 */}
         <ContentText>
-          {promotionMap.get('promotionPrice')}
-          {promotionMap.size > 1 ? '  /  ' : null}
+            {promotionMap.get('promotionPrice')} {promotionMap.size > 1 ? '  /  ' : null}
           {promotionMap.get('basePrice')}
         </ContentText>
 
