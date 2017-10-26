@@ -20,7 +20,7 @@ export default class ProductPrice extends PureComponent {
       promotionList.forEach((val) => {
         if (val.promotionType === 1) {
           promotionMap.set('basePrice', <ContentText
-             style={{color: '#ff5757' }}><RMB></RMB>{val.price / 100} × {val.quantity}</ContentText>)
+             ><RMB></RMB>{val.price / 100} × {val.quantity}</ContentText>)
         } else {
           promotionMap.set('promotionPrice', <ContentText style={{color: '#ff5757'}}><RMB></RMB>{val.price / 100} × {val.quantity}</ContentText>)
         }

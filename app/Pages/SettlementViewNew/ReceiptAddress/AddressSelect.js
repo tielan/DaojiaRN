@@ -32,7 +32,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 30,
     width: 180,
-    justifyContent: 'center'
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   title: {
     textAlign: 'center',
