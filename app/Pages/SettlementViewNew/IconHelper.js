@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 
-import Help from '../../Assets/help.png'
+import Help from '../../images/settlement/help.png'
 import AlertFreight from './AlertFreight'
 
 export default class IconHelper extends Component {

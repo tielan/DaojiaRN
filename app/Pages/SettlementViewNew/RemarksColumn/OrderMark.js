@@ -9,7 +9,7 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 import RemarkText from './RemarkText'
-import IconMark from '../../../Assets/OrderMark.png'
+import IconMark from '../../../images/settlement/OrderMark.png'
 import AlertMark from './AlertMark'
 
 export default class OrderMark extends Component {

@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 
-import FowordArrow from '../../Assets/FowordArrow.png'
+import FowordArrow from '../../images/settlement/FowordArrow.png'
 
 export default class IconArrow extends Component {
   static propTypes = {

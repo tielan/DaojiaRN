@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import ContentText from './ContentText'
-import IconClose from '../../Assets/X.png'
+import IconClose from '../../images/settlement/X.png'
 
 export default class AlertFreight extends Component {
 

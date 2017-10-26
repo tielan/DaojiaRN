@@ -8,7 +8,7 @@ import {
   Image
 } from 'react-native';
 
-import SettlePosition from '../../../Assets/SettlePosition.png'
+import SettlePosition from '../../../images/settlement/SettlePosition.png'
 import AddressUser from './AddressUser'
 import AddressText from './AddressText'
 import IconArrow from '../IconArrow'
