@@ -15,7 +15,7 @@ export default class ProductPrice extends PureComponent {
     let promotionMap = new Map()
     let promotionList = item.promotionList
     if (promotionList.length == 1) {
-        promotionMap.set('basePrice', <ContentText><RMB></RMB>{promotionList[0].price / 100} × {val.quantity}</ContentText>)
+        promotionMap.set('basePrice', <ContentText><RMB></RMB>{promotionList[0].price / 100} × {promotionList[0].quantity}</ContentText>)
     }else {
       promotionList.forEach((val) => {
         if (val.promotionType === 1) {

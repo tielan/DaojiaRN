@@ -20,7 +20,7 @@ export default class AlertFreight extends Component {
   render() {
     let {childMoneyList, title, descText, value} = this.props
 
-    let freightList = childMoneyList.map((val) => {
+    let freightList = childMoneyList &&  childMoneyList.map((val) => {
       return (
         <View key={val.name} style={styles.freightItem}>
           <ContentText>{val.name}</ContentText><ContentText>{val.value}</ContentText>
@@ -48,7 +48,7 @@ export default class AlertFreight extends Component {
 
               <ContentText style={{fontSize: 26, lineHeight: 28}}>
                 <ContentText style={{fontSize: 20}}>￥</ContentText>
-                {value.replace('￥', '')}
+                {value ? value.replace('￥', '') : null}
               </ContentText>
             </View>
 

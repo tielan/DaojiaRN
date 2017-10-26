@@ -9,7 +9,7 @@ import StoreTitle from './StoreTitle'
 import ProductInfo from './ProductInfo'
 import MoneyInfo from '../MoneyInfo'
 import PlatPoints from '../PlatPoints'
-import TotalMoney from '../TotalMoney'
+import TotalMoney from './TotalMoney'
 
 export default class SettleContent extends Component {
   render() {
