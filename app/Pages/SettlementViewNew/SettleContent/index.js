@@ -14,7 +14,7 @@ import TotalMoney from './TotalMoney'
 export default class SettleContent extends Component {
   render() {
     // console.log(this.props);
-    let {productInfo, totalWeight, moneyInfo, disMoneyInfo, couponInfo, platPoints} = this.props
+    let {productInfo, totalWeight, moneyInfo, disMoneyInfo, couponInfo, platPoints, totalMoney, totalDiscount} = this.props
     return (
       <View style={styles.settleContentWrapper}>
         <StoreTitle></StoreTitle>
@@ -29,7 +29,7 @@ export default class SettleContent extends Component {
 
         {platPoints ? <PlatPoints platPoints={platPoints.data}></PlatPoints> : null}
 
-        <TotalMoney></TotalMoney>
+        <TotalMoney totalMoney={totalMoney} totalDiscount={totalDiscount}></TotalMoney>
       </View>
     );
   }

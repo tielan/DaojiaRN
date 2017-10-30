@@ -37,6 +37,8 @@ export default class SettlementView extends Component {
           <SettleContent
             {...modulesMap}
             totalWeight={settleData.totalWeight}
+            totalMoney={settleData.totalMoney}
+            totalDiscount={settleData.totalDiscount}
             >
           </SettleContent>
           <RemarksColumn {...modulesMap}></RemarksColumn>
