@@ -42,9 +42,9 @@ export default class ProductList extends Component {
   }
 
   render() {
-    let list = this.props.productInfo.map((val) => {
+    let list = this.props.productInfo.map((val, idx) => {
       return (
-        <ProductItem key={val.skuId} item={val}>
+        <ProductItem key={val.skuId + idx} item={val}>
         </ProductItem>
       )
     })

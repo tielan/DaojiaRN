@@ -11,18 +11,13 @@ import ReceiptAddress from './ReceiptAddress'
 import DeliverTime from './DeliverTime'
 import SettleContent from './SettleContent'
 import RemarksColumn from './RemarksColumn'
-// import settleData from './_TestData'
 
 @inject('settle')
 @observer
 export default class SettlementView extends Component {
-  // state = {
-  //   settleData: settleData.result
-  // }
 
   render() {
     console.log('rerender');
-    // console.log(this.state.settleData);
     let accountData = this.props.settle.accountData
     let settleData = this.props.settle.accountResult
     let modulesMap = {}
