@@ -44,9 +44,7 @@ export default class SettlementView extends Component {
             totalWeight={settleData.totalWeight}
             >
           </SettleContent>
-          <RemarksColumn
-            orderMark={modulesMap.orderMark}
-            outOfStockConfig={modulesMap.outOfStockConfig.data}></RemarksColumn>
+          <RemarksColumn {...modulesMap}></RemarksColumn>
         </ScrollView>
         <SubmitInfo>{modulesMap.submitInfo.data}</SubmitInfo>
       </View>

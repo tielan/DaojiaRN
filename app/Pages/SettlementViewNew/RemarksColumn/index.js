@@ -16,7 +16,8 @@ export default class RemarksColumn extends Component {
       <View style={styles.container}>
         <OrderMark defaultText={orderMark.defaultText}></OrderMark>
         <View style={styles.line}></View>
-        <OutOfStockConfig outOfStockConfig={outOfStockConfig}></OutOfStockConfig>
+        {outOfStockConfig ? <OutOfStockConfig outOfStockConfig={outOfStockConfig}></OutOfStockConfig> : null}
+
       </View>
     );
   }

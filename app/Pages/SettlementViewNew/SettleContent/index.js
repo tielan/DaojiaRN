@@ -27,7 +27,8 @@ export default class SettleContent extends Component {
           couponInfo={couponInfo}>
         </MoneyInfo>
 
-        <PlatPoints platPoints={platPoints.data}></PlatPoints>
+        {platPoints ? <PlatPoints platPoints={platPoints.data}></PlatPoints> : null}
+
         <TotalMoney></TotalMoney>
       </View>
     );
