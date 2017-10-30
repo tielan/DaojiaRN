@@ -48,7 +48,7 @@ export default class SettlementView extends Component {
             orderMark={modulesMap.orderMark}
             outOfStockConfig={modulesMap.outOfStockConfig.data}></RemarksColumn>
         </ScrollView>
-        <SubmitInfo totalMoney={settleData.totalMoney}></SubmitInfo>
+        <SubmitInfo>{modulesMap.submitInfo.data}</SubmitInfo>
       </View>
     )
   }

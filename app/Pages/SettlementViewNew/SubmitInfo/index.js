@@ -13,11 +13,8 @@ export default class SettleSubmit extends Component {
     return (
       <View style={styles.settleBottomBar}>
         <Text style={styles.submitText}>
-          立即支付{'  '}
-          <RMB style={{fontSize: 13}}></RMB>
-          {this.props.totalMoney.replace('￥', "")}元
+          {this.props.children}
         </Text>
-
       </View>
     )
   }
