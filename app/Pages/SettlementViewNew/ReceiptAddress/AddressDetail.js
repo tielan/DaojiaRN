@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
   addressDetail: {
     paddingHorizontal: 25,
     paddingTop: 15,
+    // flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     marginTop: 3,
   },
   addressName: {
-    flex: 1,
+    // flex: 1,
   },
   addressEdit: {
     width: 16,
