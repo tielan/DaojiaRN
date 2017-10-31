@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     paddingTop: 15,
     flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   settlePosition: {
     width: 18,
