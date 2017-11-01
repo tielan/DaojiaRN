@@ -50,7 +50,6 @@ buck-out/
 # https://docs.fastlane.tools/best-practices/source-control/
 
 DaojiaReactNative
-entrancepage.js
 */fastlane/report.xml
 */fastlane/Preview.html
 */fastlane/screenshots
