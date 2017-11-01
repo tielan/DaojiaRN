@@ -20,7 +20,7 @@ import {api_tester_login} from './DaojiaReactNative/api/api_user';
 
 setTimeout(function(){
     //return;
-    api_tester_login({jdPin:'cheung1984'}).done(function(result,resp){
+    api_tester_login({jdPin:'jd_57593b3c2bc17'}).done(function(result,resp){
         // alert(JSON.stringify(result));
     }).fail(function(error){
         //alert(JSON.stringify(error));
@@ -28,6 +28,12 @@ setTimeout(function(){
 },0);
 
 module.exports = {
-    pagename:'Vip',
+    // pagename:'Main',
+    pagename:'Store',
+    args: {
+      storeId: '11678726',
+      orgCode: '71598'
+    }
+    // pagename:'Settlement',
 
 };
