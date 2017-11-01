@@ -16,6 +16,9 @@ class SettlementStore {
     source: 2,
     channelType: '0',
   }
+  submitData = {
+
+  }
   @observable accountResult = TestData.result
 
   @action
