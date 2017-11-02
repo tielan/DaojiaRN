@@ -38,35 +38,35 @@ class SettlementStore {
     unique: accountData.unique,
     signatureKey: accountData.serverSign || accountData.signatureKey,
     key: accountData.publicKey,
-    orderPayType: parseInt_10(This.initData.orderPayType) || 4,
+    orderPayType: 4,
     orgCode: This.initData.orgCode,
     orderPlatform: "H5",
     terminalType: 2,
     clientVersion: "2.1",
-    jdBeansCount: parseInt_10(This.initData.jingBeansNum) || undefined,
+    jdBeansCount: undefined,
 
     // 配送时间
-    sendTime: this.payTimeData.sendTime || undefined, // 配送开始时间
-    deliveryTime: this.payTimeData.deliveryTime || undefined, // 配送截止时间
-    onTime: this.payTimeData.onTime && this.payTimeData.onTime != "0" ? 1 : 0, // 是否为定时达
-    expectedDeliveryTime: this.payTimeData.expectedDeliveryTime || undefined, // 预计送达时间 2014-12-31 12:23:00 （4.1版本）
-    deliveryTip: this.payTimeData.deliveryTip || undefined, // 配送类型tip 立即送达、营业即送（4.1版本）
+    sendTime: undefined, // 配送开始时间
+    deliveryTime: undefined, // 配送截止时间
+    onTime: 0, // 是否为定时达
+    expectedDeliveryTime: undefined, // 预计送达时间 2014-12-31 12:23:00 （4.1版本）
+    deliveryTip: undefined, // 配送类型tip 立即送达、营业即送（4.1版本）
 
     // discountCode: This.initData.discountCode || undefined, // 优惠码
-    coupon: This.initData.voucherCode || undefined, // 优惠券
+    coupon: undefined, // 优惠券
 
 
     // 小费
-    deliveryClerkFeeId: This.initData.deliveryClerkFeeId, // 运费小费类型 运费小费ID 4.7需求
+    deliveryClerkFeeId: undefined, // 运费小费类型 运费小费ID 4.7需求
 
-    stockOutOption: userTyped.stockOutOption || undefined,
-    orderBuyerRemark: userTyped.Remark || undefined, //备注需获取
-    ordererMobile: userTyped.ordererMobile, // 订购人手机
-    ordererName: userTyped.ordererName, // 订购人姓名
-    deliveryType: This.initData.deliverType || 1, // 需要确认填什么, app端使用 0 （统一写死）V3.7 版本deliveryType ：1：物流配送；2：到店自提
-    fromSource: UrlChannelIsJingdongAppSearch ? 3 : 2,
+    stockOutOption: undefined,
+    orderBuyerRemark: undefined, //备注需获取
+    ordererMobile: undefined, // 订购人手机
+    ordererName: undefined, // 订购人姓名
+    deliveryType: 1, // 需要确认填什么, app端使用 0 （统一写死）V3.7 版本deliveryType ：1：物流配送；2：到店自提
+    fromSource: 2,
     source: 2,
-    platformPoints: This.initData.usePlatPointsFlag ? 1 : 0
+    platformPoints: 0
   };
     // this.submitData.deliveryTime = "00000000"; // deliveryTime 结束时间
     // 配送时间
