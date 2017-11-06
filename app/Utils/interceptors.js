@@ -10,8 +10,8 @@ const commonParams = {platCode: 'H5', appName: 'paidaojia', appVersion: '4.4.0'}
 // const baseURL = 'https://gw.o2o.jd.com/client' // 线上环境
 // const baseURL = 'http://gw.o2o.jd.com/client';
 // const baseURL = 'https://daojia.jd.com/client'
-// const baseURL = 'http://testpdjm.jd.com/client'
-const baseURL = 'https://gw-o2o.jd.com/client';
+const baseURL = 'http://testpdjm.jd.com/client'
+// const baseURL = 'https://gw-o2o.jd.com/client';
 
 // axios.defaults.baseURL = baseURL;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';

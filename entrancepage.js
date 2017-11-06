@@ -19,8 +19,9 @@ import {api_tester_login} from './DaojiaReactNative/api/api_user';
 // 模拟登陆，将jdPin设置为自己的账号jdPin即可
 
 setTimeout(function(){
-    //return;
-    api_tester_login({jdPin:'jd_57593b3c2bc17'}).done(function(result,resp){
+    // return;
+    // api_tester_login({jdPin:'jd_57593b3c2bc17'}).done(function(result,resp){
+    api_tester_login({jdPin:'小宇哥15'}).done(function(result,resp){
         // alert(JSON.stringify(result));
     }).fail(function(error){
         //alert(JSON.stringify(error));
@@ -29,11 +30,11 @@ setTimeout(function(){
 
 module.exports = {
     // pagename:'Main',
-    pagename:'Store',
-    args: {
-      storeId: '11678726',
-      orgCode: '71598'
-    }
-    // pagename:'Settlement',
+    // pagename:'Store',
+    // args: {
+    //   storeId: '11678726',
+    //   orgCode: '71598'
+    // }
+    pagename:'Settlement',
 
 };
