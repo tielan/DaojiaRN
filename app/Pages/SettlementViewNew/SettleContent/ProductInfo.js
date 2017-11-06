@@ -42,12 +42,17 @@ export default class ProductList extends Component {
   }
 
   render() {
-    let list = this.props.productInfo.map((val, idx) => {
+    let {productInfo, totalWeight} = this.props
+
+    let list = productInfo.map((val, idx) => {
       return (
         <ProductItem key={val.skuId + idx} item={val}>
         </ProductItem>
       )
     })
+
+
+
     return (
       <View>
         <Animated.View style={{overflow: 'hidden', height: this.state.height}}>
@@ -56,7 +61,8 @@ export default class ProductList extends Component {
         <TouchableWithoutFeedback
           onPress={this.toggle.bind(this)}>
           <View style={styles.totalInfo}>
-            <ContentText style={{color: '#888'}}>共{list.length}件 / {this.props.totalWeight}kg</ContentText>
+            <ContentText style={{color: '#888'}}>共{list.length}件
+              {totalWeight ? ` / ${totalWeight}kg` : ''}</ContentText>
             {list.length > 2
               ? <IconArrow
                   direction={this.state.expanded ? 'top' : 'bottom'} style={styles.arrow}></IconArrow>

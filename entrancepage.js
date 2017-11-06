@@ -29,12 +29,12 @@ setTimeout(function(){
 },0);
 
 module.exports = {
-    // pagename:'Main',
+    pagename:'Main',
     // pagename:'Store',
     // args: {
     //   storeId: '11678726',
     //   orgCode: '71598'
-    // }
-    pagename:'Settlement',
+    // },
+    // pagename:'Settlement',
 
 };
