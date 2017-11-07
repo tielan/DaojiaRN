@@ -21,7 +21,7 @@ export default class CouponList extends Component {
 
   render() {
     let {voucherList} = this.props
-    console.log(voucherList)
+    // console.log(voucherList)
 
     return (
       <FlatList

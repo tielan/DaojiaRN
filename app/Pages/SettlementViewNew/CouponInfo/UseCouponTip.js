@@ -30,6 +30,10 @@ export default class UseCouponTip extends Component {
           tip ?
           <Text style={styles.useCouponTip}>{tip} </Text> : null
         }
+        {
+          tip ?
+          <Text style={styles.useCouponTip}>N张可用 </Text> : null
+        }
 
       </View>
     );
